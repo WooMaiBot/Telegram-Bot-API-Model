@@ -1,0 +1,15 @@
+{
+    "name": "wmlabs/telegram-bot-api-model",
+    "description": "Telegram Bot Framework Models",
+    "type": "library",
+    "version": "1.0.0",
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "WooMaiLabs\\TelegramBotAPI\\": "src/"
+        }
+    },
+    "require": {
+        "psr/http-message": "^1.0"
+    }
+}
