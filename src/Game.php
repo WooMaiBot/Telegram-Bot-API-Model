@@ -2,24 +2,28 @@
 
 namespace WooMaiLabs\TelegramBotAPI;
 
-class Poll extends BasicType
+class Game extends BasicType
 {
     public function __construct(object $object)
     {
         foreach ($object as $k => $v) {
             switch ($k) {
-                case 'options':
+                case 'photo':
                     $this->$k = [];
-                    foreach ($v as $i) {
-                        $this->$k[] = new PollOption($i);
+                    foreach ($v as $e) {
+                        $this->$k[] = new PhotoSize($e);
                     }
                     break;
 
-                case 'explanation_entities':
+                case 'text_entities':
                     $this->$k = [];
                     foreach ($v as $e) {
                         $this->$k[] = new MessageEntity($e);
                     }
+                    break;
+
+                case 'animation':
+                    $this->$k = new Animation($v);
                     break;
 
                 default:

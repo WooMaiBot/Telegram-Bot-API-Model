@@ -2,18 +2,15 @@
 
 namespace WooMaiLabs\TelegramBotAPI;
 
-class CallbackQuery extends BasicType
+class ProximityAlertTriggered extends BasicType
 {
     public function __construct(object $object)
     {
         foreach ($object as $k => $v) {
             switch ($k) {
-                case 'from':
+                case 'traveler':
+                case 'watcher':
                     $this->$k = new User($v);
-                    break;
-
-                case 'message':
-                    $this->$k = new Message($v);
                     break;
 
                 default:

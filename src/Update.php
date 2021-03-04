@@ -39,6 +39,10 @@ class Update
                     $this->$k = new Poll($v);
                     break;
 
+                case 'poll_answer':
+                case 'shipping_query':
+                case 'pre_checkout_query':
+                    // todo
                 default:
                     $this->$k = $v;
             }

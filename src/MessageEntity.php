@@ -2,18 +2,14 @@
 
 namespace WooMaiLabs\TelegramBotAPI;
 
-class CallbackQuery extends BasicType
+class MessageEntity extends BasicType
 {
     public function __construct(object $object)
     {
         foreach ($object as $k => $v) {
             switch ($k) {
-                case 'from':
+                case 'user':
                     $this->$k = new User($v);
-                    break;
-
-                case 'message':
-                    $this->$k = new Message($v);
                     break;
 
                 default:

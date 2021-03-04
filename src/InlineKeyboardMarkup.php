@@ -2,23 +2,20 @@
 
 namespace WooMaiLabs\TelegramBotAPI;
 
-class Poll extends BasicType
+class InlineKeyboardMarkup extends BasicType
 {
     public function __construct(object $object)
     {
         foreach ($object as $k => $v) {
             switch ($k) {
-                case 'options':
+                case 'inline_keyboard':
                     $this->$k = [];
                     foreach ($v as $i) {
-                        $this->$k[] = new PollOption($i);
-                    }
-                    break;
-
-                case 'explanation_entities':
-                    $this->$k = [];
-                    foreach ($v as $e) {
-                        $this->$k[] = new MessageEntity($e);
+                        $tmp = [];
+                        foreach ($i as $i2) {
+                            $tmp[] = new InlineKeyboardButton($v);
+                        }
+                        $this->$k[] = $tmp;
                     }
                     break;
 
