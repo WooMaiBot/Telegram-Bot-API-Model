@@ -4,6 +4,8 @@ namespace WooMaiLabs\TelegramBotAPI\Models;
 
 class Update
 {
+    protected $attributes = [];
+
     public function __construct(object $update_object)
     {
         foreach ($update_object as $k => $v) {
@@ -39,5 +41,20 @@ class Update
                     $this->$k = $v;
             }
         }
+    }
+
+    public function withAttribute(string $name, $value)
+    {
+        $this->attributes[$name] = $value;
+    }
+
+    public function getAttribute(string $name, $default = null)
+    {
+        return $this->attributes[$name] ?? $default;
+    }
+
+    public function withoutAttribute(string $name)
+    {
+        unset($this->attributes[$name]);
     }
 }
