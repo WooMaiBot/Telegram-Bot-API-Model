@@ -6,10 +6,7 @@
     "license": "proprietary",
     "autoload": {
         "psr-4": {
-            "WooMaiLabs\\TelegramBotAPI\\": "src/"
+            "WooMaiLabs\\TelegramBotAPI\\Models\\": "src/"
         }
-    },
-    "require": {
-        "psr/http-message": "^1.0"
     }
 }

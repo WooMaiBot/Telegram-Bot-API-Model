@@ -1,20 +1,12 @@
 <?php
 
-namespace WooMaiLabs\TelegramBotAPI;
-
-use Psr\Http\Message\RequestInterface;
+namespace WooMaiLabs\TelegramBotAPI\Models;
 
 class Update
 {
-    public function __construct(RequestInterface $request)
+    public function __construct(object $update_object)
     {
-        $raw = $request->getBody()->read(10 * 1024 * 1024 * 1024);  // 10 MiB
-        $update = json_decode($raw);
-        if (!is_object($update)) {
-            throw new \Exception('Malformed JSON in Request Body');
-        }
-
-        foreach ($update as $k => $v) {
+        foreach ($update_object as $k => $v) {
             switch ($k) {
                 case 'message':
                 case 'edited_message':

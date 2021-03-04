@@ -1,6 +1,6 @@
 <?php
 
-namespace WooMaiLabs\TelegramBotAPI;
+namespace WooMaiLabs\TelegramBotAPI\Models;
 
 class Audio extends BasicType
 {
