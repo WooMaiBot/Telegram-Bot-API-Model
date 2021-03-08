@@ -46,6 +46,7 @@ class Update
     public function withAttribute(string $name, $value)
     {
         $this->attributes[$name] = $value;
+        return $this;
     }
 
     public function getAttribute(string $name, $default = null)
@@ -56,5 +57,6 @@ class Update
     public function withoutAttribute(string $name)
     {
         unset($this->attributes[$name]);
+        return $this;
     }
 }
