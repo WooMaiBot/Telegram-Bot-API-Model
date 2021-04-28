@@ -12,8 +12,8 @@ class InlineKeyboardMarkup extends BasicType
                     $this->$k = [];
                     foreach ($v as $i) {
                         $tmp = [];
-                        foreach ($i as $i2) {
-                            $tmp[] = new InlineKeyboardButton($v);
+                        foreach ($i as $v2) {
+                            $tmp[] = new InlineKeyboardButton($v2);
                         }
                         $this->$k[] = $tmp;
                     }
