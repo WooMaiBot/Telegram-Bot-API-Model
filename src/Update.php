@@ -33,6 +33,11 @@ class Update
                     $this->$k = new Poll($v);
                     break;
 
+                case 'chat_member':
+                case 'my_chat_member':
+                    $this->$k = new ChatMemberUpdated($v);
+                    break;
+
                 case 'poll_answer':
                 case 'shipping_query':
                 case 'pre_checkout_query':
