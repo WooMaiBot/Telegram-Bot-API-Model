@@ -2,7 +2,7 @@
     "name": "wmlabs/telegram-bot-api-model",
     "description": "Telegram Bot Framework Models",
     "type": "library",
-    "license": "The Unlicense",
+    "license": "Unlicense",
     "autoload": {
         "psr-4": {
             "WooMaiLabs\\TelegramBotAPI\\Models\\": "src/"
